@@ -14,4 +14,3 @@ User.create(
     ]
 )
 
-profile1 = Profile.create(user_id: 2, name: "Kip Kim", documents: "Resume", job: "Software Engineer")

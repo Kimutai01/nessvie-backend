@@ -40,10 +40,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "documents"
+    t.string "full_name"
+    t.string "email"
+    t.string "phone"
+    t.string "address"
+    t.string "city"
+    t.string "country"
+    t.string "zip_code"
+    t.string "profession"
+    t.date "dob"
+    t.boolean "approved", default: false
     t.string "job"
-    t.string "approved", default: "false"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,6 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
     t.string "password_digest"
     t.string "email"
     t.string "role", default: "user"
+    t.string "approved", default: "false"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
