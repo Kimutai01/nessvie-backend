@@ -1,5 +1,4 @@
 class UploadsController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index]
     def index
         upload= Upload.all
         render json: upload.map{|u| UploadSerializer.new(u).serializable_hash[:data][:attributes]}

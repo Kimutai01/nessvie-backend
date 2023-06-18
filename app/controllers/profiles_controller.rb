@@ -30,6 +30,11 @@ class ProfilesController < ApplicationController
         render json: profile
     end
 
+    def destroy
+        profile = Profile.find(params[:id])
+        profile.destroy
+        render json: {message: "Profile deleted"}
+    end
     private
 
     def profile_params
