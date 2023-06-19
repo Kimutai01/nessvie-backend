@@ -52,6 +52,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
     t.boolean "approved", default: false
     t.string "job"
     t.integer "user_id", null: false
+    t.string "manual_handling_certificate"
+    t.string "health_and_safety_certificate"
+    t.string "infection_control_certificate"
+    t.string "first_aid_certificate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
