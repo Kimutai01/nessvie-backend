@@ -1,13 +1,14 @@
 class CreateProfiles < ActiveRecord::Migration[7.0]
   def change
     create_table :profiles do |t|
-      t.string :full_name
+      t.string :first_name
+      t.string :surname
       t.string :email
       t.string :phone
       t.string :address
       t.string :city
       t.string :country
-      t.string :zip_code
+      t.string :post_code
       t.string :profession
       t.date :dob
       t.boolean :approved, default: false

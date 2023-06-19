@@ -40,13 +40,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "full_name"
+    t.string "first_name"
+    t.string "surname"
     t.string "email"
     t.string "phone"
     t.string "address"
     t.string "city"
     t.string "country"
-    t.string "zip_code"
+    t.string "post_code"
     t.string "profession"
     t.date "dob"
     t.boolean "approved", default: false
@@ -54,8 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
     t.integer "user_id", null: false
     t.string "manual_handling_certificate"
     t.string "health_and_safety_certificate"
-    t.string "infection_control_certificate"
-    t.string "first_aid_certificate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
