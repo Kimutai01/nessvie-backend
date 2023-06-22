@@ -38,7 +38,7 @@ class ProfilesController < ApplicationController
     private
 
     def profile_params
-        params.require(:profile).permit(:user_id, :first_name, :surname , :email, :phone, :address, :city, :country, :post_code, :profession, :dob, :job, :manual_handling_certificate, :health_and_safety_certificate,  :approved, :experience, :birth_country, :insurance, :title, :first_aid_certificate, :food_hygiene_certificate, :fire_safety_certificate)
+        params.require(:profile).permit(:user_id, :first_name, :surname , :email, :phone, :address, :city, :country, :post_code, :profession, :dob, :job, :manual_handling_certificate, :health_and_safety_certificate,  :approved, :experience, :birth_country, :insurance, :title, :first_aid_certificate, :food_hygiene_certificate, :fire_safety_certificate, :sort_code, :account_number, :bank_name)
     end
 
 

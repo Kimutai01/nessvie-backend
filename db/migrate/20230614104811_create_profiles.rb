@@ -21,12 +21,12 @@ class CreateProfiles < ActiveRecord::Migration[7.0]
       t.boolean :approved, default: false
       t.string :job
       t.references :user, null: false, foreign_key: true
-      t.string :manual_handling_certificate
-      t.string :health_and_safety_certificate
+      t.string :manual_handling_certificate, null: true, blank: true
+      t.string :health_and_safety_certificate, null: true, blank: true
 
-      t.string :first_aid_certificate
-      t.string :food_hygiene_certificate
-      t.string :fire_safety_certificate
+      t.string :first_aid_certificate, null: true, blank: true
+      t.string :food_hygiene_certificate, null: true, blank: true
+      t.string :fire_safety_certificate, null: true, blank: true
 
 
 
