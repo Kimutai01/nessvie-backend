@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_045837) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string "title"
     t.string "first_name"
     t.string "surname"
     t.string "email"
@@ -48,16 +49,38 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
     t.string "city"
     t.string "country"
     t.string "post_code"
+    t.string "sort_code"
+    t.string "account_number"
+    t.string "bank_name"
     t.string "profession"
+    t.string "experience"
+    t.string "birth_country"
+    t.string "insurance"
     t.date "dob"
     t.boolean "approved", default: false
     t.string "job"
     t.integer "user_id", null: false
     t.string "manual_handling_certificate"
     t.string "health_and_safety_certificate"
+    t.string "first_aid_certificate"
+    t.string "food_hygiene_certificate"
+    t.string "fire_safety_certificate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "references", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "job_title"
+    t.string "organisation"
+    t.string "work_email"
+    t.string "phone_number"
+    t.integer "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_references_on_profile_id"
   end
 
   create_table "uploads", force: :cascade do |t|
@@ -79,4 +102,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "references", "profiles"
 end
